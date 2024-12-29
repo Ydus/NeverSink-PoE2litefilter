@@ -61,6 +61,11 @@ SetTextColor 255 255 255
 SetBorderColor 255 255 255
 PlayEffect Orange Temp
 
+Hide
+AreaLevel >= 70
+StackSize <= 500
+BaseType == "Gold"
+
 Show
 AreaLevel < 70
 StackSize >= 500
@@ -291,9 +296,14 @@ SetFontSize 40
 Show
 AreaLevel >= 70
 Class "Currency"
-BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard" "Chance Shard"
+BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Chance Shard"
 SetTextColor 220 190 132
 SetFontSize 35
+
+Hide
+AreaLevel >= 70
+Class "Currency"
+BaseType "Regal Shard"
 
 # Currency Tier C: Vaal, Chaos, Exalt, Exotic
 Show
@@ -361,6 +371,11 @@ SetFontSize 40
 # Waystones
 #--------------------------
 
+Hide
+BaseType "Waystone"
+AreaLevel > 75
+WaystoneTier <= 12
+
 Show
 WaystoneTier < 10
 AreaLevel > 77
@@ -378,6 +393,23 @@ Rarity <= Rare
 SetTextColor 255 255 255
 SetBorderColor 255 255 255
 SetFontSize 35
+
+# Show 13, but don't not on map
+Show
+BaseType "Waystone"
+WaystoneTier <= 13
+SetTextColor 255 255 255
+SetBorderColor 255 255 255
+SetFontSize 32
+
+# Show 14, but disable sound
+Show
+BaseType "Waystone"
+WaystoneTier <= 14
+SetTextColor 255 255 255
+SetBorderColor 255 255 255
+MinimapIcon 1 White Square
+SetFontSize 36
 
 Show
 BaseType "Waystone"
@@ -421,25 +453,29 @@ SetFontSize 40
 #--------------------------
 
 Show
+AreaLevel <= 70
 Sockets > 0
 Rarity Normal
 SetBorderColor 200 200 200
 SetFontSize 35
 
 Show
-Quality > 0
+AreaLevel <= 70
+Quality > 1
 Rarity Normal
 SetBorderColor 200 200 200
 SetFontSize 35
 
 Show
+AreaLevel <= 70
 Sockets > 0
 Rarity Magic
 SetBorderColor 0 0 200
 SetFontSize 35
 
 Show
-Quality > 0
+AreaLevel <= 70
+Quality > 1
 Rarity Magic
 SetBorderColor 0 0 200
 SetFontSize 35
@@ -515,10 +551,10 @@ Class "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One 
 ### OPTIONAL RULE: Hide random bases
 # REMOVE THE BASES YOU --DO-- WANT TO SEE BEFORE SETTING TO HIDE
 
-# Hide
-# Rarity <= Magic
-# Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
-# AreaLevel >= 65
+Hide
+Rarity <= Magic
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
+AreaLevel >= 65
 
 ### OPTIONAL RULE: REDUCES BACKGROUND ON LOW LEVEL BASES
 
