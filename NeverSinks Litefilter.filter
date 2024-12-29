@@ -374,7 +374,7 @@ SetFontSize 40
 Hide
 BaseType "Waystone"
 AreaLevel > 75
-WaystoneTier <= 12
+WaystoneTier <= 11
 
 Show
 WaystoneTier < 10
@@ -394,7 +394,16 @@ SetTextColor 255 255 255
 SetBorderColor 255 255 255
 SetFontSize 35
 
-# Show 13, but don't not on map
+# Show 12, but smol
+Show
+BaseType "Waystone"
+WaystoneTier <= 12
+SetBackgroundColor 0 0 0 100
+SetTextColor 255 255 255 200
+SetBorderColor 255 255 255 25
+SetFontSize 16
+
+# Show 13, but not on map
 Show
 BaseType "Waystone"
 WaystoneTier <= 13
