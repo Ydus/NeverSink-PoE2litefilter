@@ -87,7 +87,7 @@ SetBackgroundColor 0 0 0 180
 Hide
 AreaLevel >= 77
 BaseType "Uncut Spirit Gem"
-ItemLevel <= 17
+ItemLevel <= 18
 
 Show
 BaseType "Uncut Spirit Gem"
@@ -102,7 +102,7 @@ SetFontSize 40
 
 Hide 
 AreaLevel >= 77
-ItemLevel <= 18
+ItemLevel <= 19
 BaseType "Uncut Skill Gem"
 
 # Make support gems pop during campaign
